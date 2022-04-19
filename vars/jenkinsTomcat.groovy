@@ -1,4 +1,5 @@
 def call(String registryin = 'a', String docTag = 'a', String grepo = 'a', String gbranch = 'a') {
+	
 pipeline {
 environment { 
     registry = "$registryin"   
@@ -42,4 +43,4 @@ environment {
 	}
 }
 }
-  
+} 
