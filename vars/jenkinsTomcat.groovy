@@ -21,17 +21,14 @@ environment {
 	stage('BUILD IMAGE') {
 		agent {label 'docker'}
 		steps {
-			script {
-				dockerImage=docker.build("'$registry:$dockerTag'")
-			}
+			sh 'docker build -t "$registry:$dockerTag"'
 		}
 	}
 
 	stage('PUSH TO DOCKER HUB') {
 		agent {label 'docker'}
 		steps {
-			dockerImage.push()
-		
+			sh 'docker push $registry:$dockerTag'
 		}
 	}
 
