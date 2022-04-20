@@ -35,7 +35,7 @@ environment {
 	stage('DEPLOY') {
 		agent {label 'kubernetes'}
 		steps {
-			sh 'kubectl set image deployment webapp-deployment tomcat="$registry:$dockerTag"'
+			sh 'kubectl set image deployment tomcat-deploy tomcat="$registry:$dockerTag"'
 		}
 	}
 }
