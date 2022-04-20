@@ -21,7 +21,7 @@ environment {
 	stage('BUILD IMAGE') {
 		agent {label 'docker'}
 		steps {
-			sh 'docker build -t "$registry:$dockerTag"'
+			sh 'docker build -t "$registry:$dockerTag" .'
 		}
 	}
 
